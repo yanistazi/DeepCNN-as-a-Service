@@ -10,7 +10,16 @@ Motivation
 -------------------------
 Model selection, training, and finetuning of a Convolutional Neural Net is a time consuming and tedious task. It often requires multiple repetitions of training with various hyperparameter configurations. We decided to formalize this process by constructing a cloud service that would enable the user to upload a previously unseen labeled dataset and return to the user a highly accurate and finetuned CNN that is ready for use. The user will be emailed a report, which displays the finetuned model’s training and validation accuracy, training loss, and a confusion matrix with test results. The cloud solution offers an efficient way for users to obtain a finetuned CNN model that they can begin using out of the box for inference.
 
+-------------------------
+Training Workflow
+-------------------------
+![Screenshot](workflow.png)
 
+
+-------------------------
+Cloud Service Workflow
+-------------------------
+![Screenshot](cloud_workflow.png)
 
 
 --------------------
