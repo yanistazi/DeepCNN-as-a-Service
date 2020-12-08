@@ -10,24 +10,7 @@ Model selection, training, and finetuning of a Convolutional Neural Net is a tim
 
 
 
-
-Class Hierachy
-
-		|-------------------------|             |------------|
-                |     BinarySearchTree    |--has-a----->|   BSTNode  |
-                |-------------------------|             |------------|
-                           ^    ^                           ^  ^
-                          /      \                          |  |
-                       is-a     is-a                        |  |
-                        /          \                        |  |
-                       /           |--------------|         |  |
-                      /            |  SplayTree   |-has-a---|  |
-                     /             |--------------|            |
-                    /                                        is-a 
-                   /                                           |
-    |----------------|                                  |------------|
-    |     AVLTree    |--has-a-------------------------->| AVLNode    |
-    |----------------|                                  |------------|
+![Screenshot](workflow.png)
    
 
 
