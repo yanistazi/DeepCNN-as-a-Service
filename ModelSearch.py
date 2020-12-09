@@ -2,7 +2,7 @@
 """
 Created on Mon Dec  7 21:22:05 2020
 
-@author: erikw
+
 """
 
 import time

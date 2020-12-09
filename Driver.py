@@ -2,7 +2,7 @@
 """
 Created on Tue Dec  8 00:18:20 2020
 
-@author: erikw
+
 """
 
 from PollStorage import PollStorage
