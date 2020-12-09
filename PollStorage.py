@@ -2,9 +2,9 @@
 """
 Created on Sat Oct 17 10:26:27 2020
 
-@author: erikw
+
 """
-#curl -X PUT -H 'Content-Type: application/octet-stream' --upload-file dataset.zip $(curl https://us-central1-dl-project-292616.cloudfunctions.net/uploadDatasetZIP?email=ewei485@gmail.com)
+
 
 from google.cloud import storage
 import os
@@ -21,13 +21,13 @@ class PollStorage:
     
     def start_polling(self):
         #set google credentials and init google storage client
-        os.environ['GOOGLE_APPLICATION_CREDENTIALS']="googleServiceAccountKey.json"
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS']="[USER KEY]"
         client = storage.Client()
         blobList = []
         datasetName = ''
         #poll dataset bucket every n seconds to check for blobs
         while True:
-            blobList = client.list_blobs("dataset-upload", prefix="dataset")
+            blobList = client.list_blobs("[DATASET BUCKET]", prefix="dataset")
             for blob in blobList:
                 datasetName = blob.name
                 break
@@ -41,7 +41,7 @@ class PollStorage:
         
         #get the corresponding email from email bucket and notify
         email_fname = 'emailToDeliver.txt'
-        email_bucket = client.bucket('email-upload')
+        email_bucket = client.bucket('[EMAIL BUCKET NAME]')
         email_blob = email_bucket.blob('email' + datasetTime + '.txt')
         email_blob.download_to_filename(email_fname)
         emailFile = open(email_fname, 'r')
@@ -53,7 +53,7 @@ class PollStorage:
         #download dataset for processing
         extension = os.path.splitext(datasetName)[1]
         data_fname = 'dataset' + extension
-        data_bucket = client.bucket('dataset-upload')
+        data_bucket = client.bucket('[DATASET BUCKET NAME]')
         data_blob = data_bucket.blob(datasetName)
         data_blob.download_to_filename(data_fname)
         print('dataset downloaded to {}, start processing'.format(data_fname))

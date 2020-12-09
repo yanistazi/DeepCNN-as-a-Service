@@ -2,7 +2,7 @@
 """
 Created on Sun Oct 18 10:23:34 2020
 
-@author: erikw
+
 """
 
 import smtplib, ssl
@@ -25,7 +25,7 @@ class SendReport:
     def sendEmail(self):
         msg = EmailMessage()
         msg['Subject'] = 'Your trained and optimized model is ready'
-        msg['From'] = "dlprojectnyu@gmail.com"
+        msg['From'] = "[EMAIL ADDRESS]"
         msg['To'] = self.email_add
         
         #attach the model summary text file
@@ -62,26 +62,17 @@ class SendReport:
         
         #create a secure SSL context
         context = ssl.create_default_context()
-        password = 'projectDL2020!'
+        password = '[EMAIL PASSWORD]'
         with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
-            server.login("dlprojectnyu@gmail.com", password)
+            server.login("[EMAIL ADDRESS]", password)
             server.send_message(msg)
             server.quit()
             
 
 def main():
-    '''
-    best_model = 'scratch'
-    best_model2 = 'from_scratch'
-    sendReport = SendReport(model_link="https://www.google.com",email_add='ewei485@gmail.com' \
-                        ,cm_img='user_output/confusion_matrix_'+best_model+'.png' \
-                        ,loss_img='user_output/history_'+best_model+'_loss.png' \
-                        ,acc_img='user_output/history_'+best_model+'_accuracy.png' \
-                        ,model_sum='user_output/model_'+best_model2+'_summary.txt')
-    sendReport.sendEmail()
-    '''
+  
     
-    sendReport = SendReport(model_link='https://www.google.com',email_add='ewei485@gmail.com' \
+    sendReport = SendReport(model_link='https://www.google.com',email_add='[EMAIL ADDRESS]' \
                             , cm_img='google_play_download.jpeg',loss_img='google_play_download.jpeg' \
                                 ,acc_img='google_play_download.jpeg',model_sum='user_output/model.txt')
     sendReport.sendEmail()

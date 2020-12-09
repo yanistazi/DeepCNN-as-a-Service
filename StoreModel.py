@@ -2,9 +2,9 @@
 """
 Created on Fri Oct 16 14:18:38 2020
 
-@author: erikw
+
 """
-#curl -X PUT -H 'Content-Type: application/octet-stream' --upload-file cars.csv $(curl https://us-central1-dl-project-292616.cloudfunctions.net/uploadDatasetCSV?email=erik0@yahoo.com)
+
 
 from google.cloud import storage
 import os
@@ -19,13 +19,13 @@ class StoreModel:
         return
     def store_model(self, local_file):
         #set google credentials and init google storage client
-        os.environ['GOOGLE_APPLICATION_CREDENTIALS']="googleServiceAccountKey.json"
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS']="[USER KEY]"
         client = storage.Client()
         sourceFile = local_file
         destFile = 'model' + dt.now().strftime('%H%M%S') + '.h5'
-        fileLink = 'https://storage.googleapis.com/stored-models/' + destFile
+        fileLink = 'https://storage.googleapis.com/[BUCKET NAME]/' + destFile
         #upload model file to google storage
-        if self.upload_blob('stored-models', sourceFile, destFile):
+        if self.upload_blob('[MODELS BUCKET NAME]', sourceFile, destFile):
             self.model_link = fileLink
         
     def upload_blob(self, bucket_name, source_file_name, destination_blob_name):
