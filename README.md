@@ -15,7 +15,7 @@ Training Workflow
 -------------------------
 ![Screenshot](workflow.png)
 
-
+![Screenshot](DL_Project_Demo.mp4)
 -------------------------
 Cloud Service Workflow
 -------------------------
