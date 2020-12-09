@@ -14,8 +14,6 @@ Model selection, training, and finetuning of a Convolutional Neural Net is a tim
 Training Workflow
 -------------------------
 ![Screenshot](workflow.png)
-
-
 -------------------------
 Cloud Service Workflow
 -------------------------
@@ -32,5 +30,6 @@ Given training time and cost constraints, we decided to come up with initial mod
 --------------------
 Additional Notes
 --------------------
+![Please check the Demo to be able to use the service](DL_Project_Demo.mp4)
 
 Please feel free to use our Cloud Service . We will be improving the service using genetic algorithm search for hyperparameter optimization and P2L to predict, from a set of "source" models, the one model most likely to produce effective transfer for training a given "target" model.
