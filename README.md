@@ -30,6 +30,6 @@ Given training time and cost constraints, we decided to come up with initial mod
 --------------------
 Additional Notes
 --------------------
-![Email me at :](yt2725@nyu.edu) if you want the demo.
+[Email me :](mailto:yt2725@nyu.edu?subject=[GitHub]%20Source%20Han%20Sans)
 
 Please feel free to use our Cloud Service . We will be improving the service using genetic algorithm search for hyperparameter optimization and P2L to predict, from a set of "source" models, the one model most likely to produce effective transfer for training a given "target" model.
